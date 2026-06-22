@@ -81,30 +81,30 @@ identifica_perfil(X,agressivo) :-
 
 % Sugere opções de investimento com base no perfil do investidor, visando apresentar as melhores opções para ele.
 
-sugere_investimento(conservador, Y) :-
-    Y = investimento(tesouro_direto);
-    Y = investimento(cdb);
-    Y = investimento(ativos_renda_fixa).
+sugere_investimento(conservador, Investimento) :-
+    Investimento = investimento(tesouro_direto);
+    Investimento = investimento(cdb);
+    Investimento = investimento(ativos_renda_fixa).
 
-sugere_investimento(moderado) :-
-    investimento(cdb);
-    investimento(ativos_renda_fixa);
-    investimento(fundo_multimercado).
+sugere_investimento(moderado, Investimento) :-
+    Investimento = investimento(cdb);
+    Investimento = investimento(ativos_renda_fixa);
+    Investimento = investimento(fundo_multimercado).
 
-sugere_investimento(balanceado) :-
-    investimento(ativos_renda_fixa);
-    investimento(fundo_multimercado);
-    investimento(ativos_renda_variavel).
+sugere_investimento(balanceado, Investimento) :-
+    Investimento = investimento(ativos_renda_fixa);
+    Investimento = investimento(fundo_multimercado);
+    Investimento = investimento(ativos_renda_variavel).
 
-sugere_investimento(arrojado) :-
-    investimento(fundo_multimercado);
-    investimento(ativos_renda_variavel);
-    investimento(bolsa_valores).
+sugere_investimento(arrojado, Investimento) :-
+    Investimento = investimento(fundo_multimercado);
+    Investimento = investimento(ativos_renda_variavel);
+    Investimento = investimento(bolsa_valores).
 
-sugere_investimento(agressivo) :-
-    investimento(ativos_renda_variavel);
-    investimento(bolsa_valores);
-    investimento(ativos_internacionais).
+sugere_investimento(agressivo, Investimento) :-
+    Investimento = investimento(ativos_renda_variavel);
+    Investimento = investimento(bolsa_valores);
+    Investimento = investimento(ativos_internacionais).
 
 % Massa de teste para regra recursiva:
 
